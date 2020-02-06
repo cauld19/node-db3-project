@@ -15,3 +15,13 @@ SELECT ProductName, Quantity FROM OrderDetail JOIN Product ON OrderDetail.Produc
 -- Display the OrderID, Customer's Company Name and the employee's LastName for every order. All columns should be labeled clearly. Displays 16,789 records.
 
 SELECT id, CompanyName, LastName FROM [Order] JOIN Customer ON [Order].CustomerId = Customer.Id JOIN Employee ON [Order].EmployeeId = Employee.Id;
+
+
+-- Stretch Problems
+
+-- Displays CategoryName and a new column called Count that shows how many products are in each category. Shows 8 records.
+
+SELECT CategoryName, COUNT(*) as Count from [Categories] JOIN Products on [Categories].CategoryId = Products.CategoryId GROUP BY CategoryName
+
+-- Display OrderID and a column called ItemCount that shows the total number of products placed on the order. Shows 196 records.
+
